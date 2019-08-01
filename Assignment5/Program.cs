@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assignment5.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,8 +7,14 @@ using System.Windows.Forms;
 
 namespace Assignment5
 {
-    static class Program
+    public static class Program
     {
+        public static StartForm startForm;
+        public static SplashForm splashForm;
+        public static SelectForm selectForm;
+        public static ProductInfoForm productInfoForm;
+        public static OrderForm orderForm;
+        public static AboutForm aboutform;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +23,17 @@ namespace Assignment5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            //instantiate all forms
+            startForm = new StartForm();
+            splashForm = new SplashForm();
+            selectForm = new SelectForm();
+            productInfoForm = new ProductInfoForm();
+            orderForm = new OrderForm();
+            aboutform = new AboutForm();
+
+
+            Application.Run(new StartForm());
         }
     }
 }
